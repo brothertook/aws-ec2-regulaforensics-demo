@@ -25,7 +25,7 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 
 - Set a license file to the `packer/artifacts/license/regula.license` folder.
 - Edit the Packer variables file `packer/variables/faceapi.pkrvars.hcl` according to your needs.
-- Required `faceapi_tag` (default "5.2.256.842") can be found at [hub.docker.com](https://hub.docker.com/r/regulaforensics/face-api/tags).
+- Required `faceapi_tag` can be found at [hub.docker.com](https://hub.docker.com/r/regulaforensics/face-api/tags).
 - `faceapi_engine` is either cpu(default) or gpu. This is important for the next Terraform section.
 - Run a Packer build to create AWS AMI.
 
@@ -50,6 +50,9 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 > The default engine is CPU. To deploy a GPU version, do the following:
 >   - Set `faceapi_engine` to `gpu` and `faceapi_instance_type` to one of the [`g4dn`](https://aws.amazon.com/ec2/instance-types/g4/) instance types, i.e. `g4dn.xlarge` at the `terraform/main.tf` file.
 >   - The Packer image also should have `faceapi_engine` set to `gpu`.
+
+> [!NOTE]
+> Default AWS quota quota name doesn't allow to run G spot instances, please ensure you've approved request quota limit (L-3819A6DF) before you launch terraform or set instance type to on-demand by following.
 
 ```bash
   terraform init
