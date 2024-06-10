@@ -43,7 +43,7 @@ variable "db_instance_class" {
 variable "db_name" {
   description = "RDS name to deploy"
   type        = string
-  default     = "docreader"
+  default     = "faceapi"
 }
 
 variable "db_username" {

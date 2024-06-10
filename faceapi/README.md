@@ -48,7 +48,7 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 
 > [!IMPORTANT]
 > The default engine is CPU. To deploy a GPU version, do the following:
->   - Set `faceapi_engine` to `gpu` and `faceapi_instance_type` to one of the [`g4dn`](https://aws.amazon.com/ec2/instance-types/g4/) instance types, i.e. `g4dn.large` at the `terraform/main.tf` file.
+>   - Set `faceapi_engine` to `gpu` and `faceapi_instance_type` to one of the [`g4dn`](https://aws.amazon.com/ec2/instance-types/g4/) instance types, i.e. `g4dn.xlarge` at the `terraform/main.tf` file.
 >   - The Packer image also should have `faceapi_engine` set to `gpu`.
 
 ```bash
