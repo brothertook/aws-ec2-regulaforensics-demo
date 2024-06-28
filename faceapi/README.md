@@ -52,7 +52,10 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 >   - The Packer image also should have `faceapi_engine` set to `gpu`.
 
 > [!NOTE]
-> Default AWS quota quota name doesn't allow to run G spot instances, please ensure you've approved request quota limit (L-3819A6DF) before you launch terraform or set instance type to on-demand by following.
+> Default AWS quota `All G and VT Spot Instance Requests` doesn't allow to run G spot instances, please ensure you've approved request quota limit (`arn:aws:servicequotas:AWS_REGION:AWS_ACCOUNT_ID:ec2/L-3819A6DF`) before you launch terraform or set instance type to on-demand by following.
+
+> [!NOTE]
+> If you don't want to use `Spot` instances, please, set `asg_on_demand_base_capacity = 1 and  asg_on_demand_percentage_above_base_capacity = 100`.
 
 ```bash
   terraform init
