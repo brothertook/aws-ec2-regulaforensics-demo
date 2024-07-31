@@ -1,8 +1,3 @@
-variable "account_id" {
-  description = "Account ID to deploy"
-  type        = string
-}
-
 variable "name" {
   description = "Application name to deploy"
   type        = string
