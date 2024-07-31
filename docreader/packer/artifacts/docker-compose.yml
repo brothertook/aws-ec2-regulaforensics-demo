@@ -6,7 +6,7 @@ services:
     image: regulaforensics/docreader:${docreader_tag}
     container_name: docreader
     volumes:
-      - docreader_site:/app/view/static
+      - docreader_site:/app/view
       - /home/ubuntu/regula.license:/app/extBin/unix/regula.license
       - /home/ubuntu/config.yaml:/app/config.yaml
     networks:
@@ -21,6 +21,8 @@ services:
       - /home/ubuntu/nginx/docreader.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "80:80"
+    depends_on:
+      - docreader
     networks:
       - docreader-network
     restart: always

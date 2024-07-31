@@ -12,8 +12,8 @@ services:
               count: all
               capabilities: [gpu]
     volumes:
+      - faceapi_site:/app/view
       - /home/ubuntu/regula.license:/app/extBin/unix/regula.license
-      - faceapi_site:/app/view/static
       - /home/ubuntu/config.yaml:/app/config.yaml
       
     networks:
@@ -24,8 +24,8 @@ services:
     image: nginx:${nginx_tag}
     container_name: nginx
     volumes:
-      - /home/ubuntu/nginx/faceapi.conf:/etc/nginx/conf.d/default.conf
       - faceapi_site:/var/www/faceapi
+      - /home/ubuntu/nginx/faceapi.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "80:80"
     networks:

@@ -1,7 +1,6 @@
 module "app" {
   source = "./modules/app"
-
-  account_id                                   = var.account_id
+  
   name                                         = var.name
   environment                                  = var.environment
   region                                       = var.region
