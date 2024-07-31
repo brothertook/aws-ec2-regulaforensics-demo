@@ -31,11 +31,11 @@ module "db" {
 
   backup_retention_period = 14
   skip_final_snapshot     = true
-  deletion_protection     = true
 
   apply_immediately = true
 
-  ca_cert_identifier = "rds-ca-rsa2048-g1"
+  deletion_protection = false
+  ca_cert_identifier  = "rds-ca-rsa2048-g1"
 
   parameters = [
     {
