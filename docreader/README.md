@@ -9,6 +9,11 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 - Install and configure [Terraform](https://www.terraform.io/downloads.html).
 
 - Install and configure [Packer](https://developer.hashicorp.com/packer/downloads).
+  
+```bash
+  packer plugins install github.com/hashicorp/ansible
+  packer plugins install github.com/hashicorp/amazon
+```
 
 - Install and configure [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html).
 
@@ -38,6 +43,7 @@ Terraform is an Infrastructure as Code (IaC) software tool. With Terraform, you 
 ### Configure Terraform
 
 - Edit Terraform variables at `terraform/main.tf`.
+- The variable **name** should be alphanumeric and equal to **ami_name** from the variables/docreader.pkrvars.hcl file.
 - Upload a certificate for your domain "*.example.com" using AWS Certificate Manager (ACM). (See `terraform/variables.tf` - `domain`, `db_password`, `db_username` vars.)
 
 
