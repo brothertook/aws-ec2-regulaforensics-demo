@@ -6,7 +6,7 @@ module "rds" {
 
   # All available versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts
   engine               = "postgres"
-  engine_version       = "16.2"
+  engine_version       = "16.7"
   family               = "postgres16" # DB parameter group
   major_engine_version = "16"         # DB option group
   instance_class       = var.db_instance_class
